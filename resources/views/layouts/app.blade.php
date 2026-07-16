@@ -284,25 +284,39 @@
                 </a>
             </li>
 
+            <li class="nav-heading">Layanan Medis</li>
+
+            @if (Auth::user()->role == 'Superadmin' || Auth::user()->role == 'Admin' || Auth::user()->role == 'Dokter')
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('visit.*') ? '' : 'collapsed' }}"
+                        href="{{ route('visit.index') }}">
+                        <i class='bx bx-clinic'></i>
+                        <span>Antrian Pasien</span>
+                    </a>
+                </li>
+            @endif
+
+            @if (Auth::user()->role == 'Superadmin' || Auth::user()->role == 'Admin')
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('transaction.*') ? '' : 'collapsed' }}"
+                        href="{{ route('transaction.index') }}">
+                        <i class='bx bx-wallet'></i>
+                        <span>Pembayaran/Kasir</span>
+                    </a>
+                </li>
+            @endif
+
+            <li class="nav-heading">Master & Sistem</li>
+
             @if (Auth::user()->role == 'Superadmin')
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('user.*') ? '' : 'collapsed' }}"
                         href="{{ route('user.index') }}">
                         <i class='bx bx-user-pin'></i>
-                        <span>User</span>
+                        <span>Data User</span>
                     </a>
                 </li>
             @endif
-
-            <li class="nav-heading">Layanan Medis</li>
-
-            <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('visit.*') ? '' : 'collapsed' }}"
-                    href="{{ route('visit.index') }}">
-                    <i class='bx bx-clinic'></i>
-                    <span>Antrian Pasien</span>
-                </a>
-            </li>
 
             @if (Auth::user()->role == 'Superadmin' || Auth::user()->role == 'Admin')
                 <li class="nav-item">
@@ -327,6 +341,16 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+            @endif
+
+            @if (Auth::user()->role == 'Superadmin' || Auth::user()->role == 'Admin')
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('report.*') ? '' : 'collapsed' }}"
+                        href="{{ route('report.index') }}">
+                        <i class='bx bx-bar-chart-alt-2'></i>
+                        <span>Laporan Pendapatan</span>
+                    </a>
                 </li>
             @endif
 
@@ -415,6 +439,7 @@
     <script src="{{ asset('niceadmin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('niceadmin/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('niceadmin/vendor/select2/js/select2.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="{{ asset('niceadmin/js/main.js') }}"></script>

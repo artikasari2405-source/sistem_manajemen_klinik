@@ -22,4 +22,9 @@ class MedicalRecord extends Model
     {
         return $this->hasMany(RecordTreatment::class);
     }
+
+    public function transaction()
+    {
+        return $this->hasOne(Transaction::class);
+    }
 }

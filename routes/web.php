@@ -10,6 +10,8 @@ use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\VisitController;
 use App\Http\Controllers\MedicalRecordController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\ReportController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,11 +35,18 @@ Route::middleware('auth')->group(function () {
     Route::resource('/patient', PatientController::class)->middleware('role:Superadmin,Admin');
     Route::resource('/medicine', MedicineController::class)->middleware('role:Superadmin,Admin');
     Route::resource('/treatment', TreatmentController::class)->middleware('role:Superadmin,Admin');
+    
+    Route::get('/transaction/{transaction}/print', [TransactionController::class, 'print'])->name('transaction.print');
+    Route::resource('/transaction', TransactionController::class)->middleware('role:Superadmin,Admin');
+
     Route::resource('/visit', VisitController::class);
     Route::post('/visit/{visit}/status', [VisitController::class, 'status'])->name('visit.status');
 
     Route::get('/visit/{visit}/medical-record/create', [MedicalRecordController::class, 'create'])->name('medical-record.create');
     Route::post('/visit/{visit}/medical-record', [MedicalRecordController::class, 'store'])->name('medical-record.store');
+
+    Route::get('/report', [ReportController::class, 'index'])->middleware('role:Superadmin,Admin')->name('report.index');
+    Route::get('/report/export-pdf', [ReportController::class, 'exportPdf'])->middleware('role:Superadmin,Admin')->name('report.export-pdf');
 
     Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
     Route::put('/setting/{setting}/update', [SettingController::class, 'update'])->name('setting.update');

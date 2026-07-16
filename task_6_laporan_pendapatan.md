@@ -16,6 +16,6 @@ Menyediakan dashboard laporan operasional dan finansial klinik untuk Superadmin 
    - Gunakan generator acak pada `VisitSeeder` dan `TransactionSeeder` dari Task sebelumnya untuk membuat pola kunjungan yang beragam (acak tanggal selama 1 bulan terakhir) agar dashboard tidak kosong dan grafiknya dapat terlihat.
 
 ## Acceptance Criteria
-- [ ] Halaman laporan berfungsi dan merender data pendapatan secara akurat.
-- [ ] Fungsi Export PDF dapat mendownload file tanpa error (CSS/tampilan PDF rapi).
-- [ ] Karena ada seeder dummy historical, grafik/widget langsung menunjukkan data yang bisa dianalisa secara visual ketika sistem pertama kali diinstall.
+- [x] Halaman laporan berfungsi dan merender data pendapatan secara akurat.
+- [x] Fungsi Export PDF dapat mendownload file tanpa error (CSS/tampilan PDF rapi).
+- [x] Karena ada seeder dummy historical, grafik/widget langsung menunjukkan data yang bisa dianalisa secara visual ketika sistem pertama kali diinstall.

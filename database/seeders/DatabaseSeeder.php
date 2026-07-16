@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             TreatmentSeeder::class,
             VisitSeeder::class,
             MedicalRecordSeeder::class,
+            TransactionSeeder::class,
         ]);
     }
 }

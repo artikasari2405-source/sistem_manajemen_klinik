@@ -15,7 +15,7 @@ Modul untuk kalkulasi akhir total biaya tagihan berdasarkan rekam medis dan memp
    - Cetak struk/resi pembayaran secara sederhana.
 
 ## Acceptance Criteria
-- [ ] Biaya tagihan dapat dihitung dengan presisi (akurat sesuai subtotal data resep & tindakan).
-- [ ] Admin/Kasir dapat menginput nominal pembayaran.
-- [ ] Terdapat mekanisme cetak (PDF atau browser window print) untuk invoice transaksi.
-- [ ] Seeder berhasil menampilkan simulasi transaksi kasir.
+- [x] Biaya tagihan dapat dihitung dengan presisi (akurat sesuai subtotal data resep & tindakan).
+- [x] Admin/Kasir dapat menginput nominal pembayaran.
+- [x] Terdapat mekanisme cetak (PDF atau browser window print) untuk invoice transaksi.
+- [x] Seeder berhasil menampilkan simulasi transaksi kasir.

@@ -17,4 +17,9 @@ class Visit extends Model
     {
         return $this->belongsTo(User::class, 'doctor_id');
     }
+
+    public function medicalRecord()
+    {
+        return $this->hasOne(MedicalRecord::class);
+    }
 }

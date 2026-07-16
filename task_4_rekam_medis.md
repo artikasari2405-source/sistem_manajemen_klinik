@@ -18,7 +18,7 @@ Modul bagi Dokter untuk melakukan pemeriksaan kepada pasien, mencatat diagnosa, 
    - Otomatis merubah status visit menjadi `Done` jika rekam medis selesai disimpan.
 
 ## Acceptance Criteria
-- [ ] Relasi rekam medis dengan resep obat dan tindakan (One-to-Many pivot) terekam dengan benar di database.
-- [ ] Stok pada tabel `medicines` berkurang sesuai quantity yang ada di `prescriptions`.
-- [ ] Terdapat riwayat pemeriksaan dummy dari seeder yang valid secara logika bisnis.
-- [ ] Form dynamic untuk penambahan obat/tindakan berjalan lancar di tampilan (UI).
+- [x] Relasi rekam medis dengan resep obat dan tindakan (One-to-Many pivot) terekam dengan benar di database.
+- [x] Stok pada tabel `medicines` berkurang sesuai quantity yang ada di `prescriptions`.
+- [x] Terdapat riwayat pemeriksaan dummy dari seeder yang valid secara logika bisnis.
+- [x] Form dynamic untuk penambahan obat/tindakan berjalan lancar di tampilan (UI).

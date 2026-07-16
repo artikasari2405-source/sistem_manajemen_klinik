@@ -51,6 +51,11 @@
                                         <option value="Cancelled" @selected($visit->status == 'Cancelled')>Cancelled</option>
                                     </select>
                                 </form>
+                                @if (Auth::user()->role == 'Dokter' && $visit->status != 'Done' && $visit->status != 'Cancelled')
+                                    <a href="{{ route('medical-record.create', $visit) }}" class="btn btn-success btn-sm ms-2">
+                                        <i class='bx bx-plus-medical'></i> Periksa
+                                    </a>
+                                @endif
                                 @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'Superadmin')
                                 <button type="button" class="btn btn-danger btn-sm btn-delete ms-2" data-bs-toggle="modal"
                                     data-bs-target="#deleteModal" data-route="{{ route('visit.destroy', $visit) }}">

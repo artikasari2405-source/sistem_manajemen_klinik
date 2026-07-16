@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             MedicineSeeder::class,
             TreatmentSeeder::class,
             VisitSeeder::class,
+            MedicalRecordSeeder::class,
         ]);
     }
 }

@@ -18,6 +18,6 @@ Membuat modul Master Data yang mencakup pencatatan data Pasien, inventaris Obat,
    - *Styling* wajib mengikuti struktur form dan Datatables bawaan NiceAdmin yang sudah dipakai di sistem.
 
 ## Acceptance Criteria
-- [ ] Tabel `patients`, `medicines`, dan `treatments` berhasil dibuat melalui migration.
-- [ ] Seeder berfungsi dengan baik untuk mengisi data dummy awal.
-- [ ] Role Superadmin dan Admin dapat mengakses, menambah, mengubah, dan menghapus data pada tiga master data tersebut dengan sempurna.
+- [x] Tabel `patients`, `medicines`, dan `treatments` berhasil dibuat melalui migration.
+- [x] Seeder berfungsi dengan baik untuk mengisi data dummy awal.
+- [x] Role Superadmin dan Admin dapat mengakses, menambah, mengubah, dan menghapus data pada tiga master data tersebut dengan sempurna.

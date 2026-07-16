@@ -5,7 +5,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\PatientController;
+use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\TreatmentController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -25,6 +27,9 @@ Route::middleware('auth')->group(function () {
     Route::put('/dashboard/update', [DashboardController::class, 'update'])->name('dashboard.update');
 
     Route::resource('/user', UserController::class)->middleware('role:Superadmin');
+    Route::resource('/patient', PatientController::class)->middleware('role:Superadmin,Admin');
+    Route::resource('/medicine', MedicineController::class)->middleware('role:Superadmin,Admin');
+    Route::resource('/treatment', TreatmentController::class)->middleware('role:Superadmin,Admin');
 
     Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
     Route::put('/setting/{setting}/update', [SettingController::class, 'update'])->name('setting.update');

@@ -294,6 +294,32 @@
                 </li>
             @endif
 
+            @if (Auth::user()->role == 'Superadmin' || Auth::user()->role == 'Admin')
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('patient.*') || request()->routeIs('medicine.*') || request()->routeIs('treatment.*') ? '' : 'collapsed' }}"
+                        data-bs-target="#master-nav" data-bs-toggle="collapse" href="#">
+                        <i class="bx bx-data"></i><span>Master Data</span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="master-nav" class="nav-content collapse {{ request()->routeIs('patient.*') || request()->routeIs('medicine.*') || request()->routeIs('treatment.*') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="{{ route('patient.index') }}" class="{{ request()->routeIs('patient.*') ? 'active' : '' }}">
+                                <i class="bi bi-circle"></i><span>Pasien</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('medicine.index') }}" class="{{ request()->routeIs('medicine.*') ? 'active' : '' }}">
+                                <i class="bi bi-circle"></i><span>Obat</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('treatment.index') }}" class="{{ request()->routeIs('treatment.*') ? 'active' : '' }}">
+                                <i class="bi bi-circle"></i><span>Tindakan</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
+
 
         </ul>
 

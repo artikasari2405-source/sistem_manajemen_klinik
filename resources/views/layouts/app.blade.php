@@ -294,6 +294,16 @@
                 </li>
             @endif
 
+            <li class="nav-heading">Layanan Medis</li>
+
+            <li class="nav-item">
+                <a class="nav-link {{ request()->routeIs('visit.*') ? '' : 'collapsed' }}"
+                    href="{{ route('visit.index') }}">
+                    <i class='bx bx-clinic'></i>
+                    <span>Antrian Pasien</span>
+                </a>
+            </li>
+
             @if (Auth::user()->role == 'Superadmin' || Auth::user()->role == 'Admin')
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('patient.*') || request()->routeIs('medicine.*') || request()->routeIs('treatment.*') ? '' : 'collapsed' }}"

@@ -15,7 +15,7 @@ Sistem antrian harian untuk pasien yang datang berkunjung. Modul ini menghubungk
    - Halaman daftar antrian aktif untuk memantau status pasien.
 
 ## Acceptance Criteria
-- [ ] Tabel `visits` berelasi sempurna dengan tabel pasien dan pengguna (role dokter).
-- [ ] Antrian nomor dapat digenerate otomatis secara urut (auto-increment harian).
-- [ ] Seeder berhasil membuat data dummy antrian pasien.
-- [ ] Daftar antrian dapat ditampilkan di dashboard Admin dan Dokter.
+- [x] Tabel `visits` berelasi sempurna dengan tabel pasien dan pengguna (role dokter).
+- [x] Antrian nomor dapat digenerate otomatis secara urut (auto-increment harian).
+- [x] Seeder berhasil membuat data dummy antrian pasien.
+- [x] Daftar antrian dapat ditampilkan di dashboard Admin dan Dokter.

@@ -8,6 +8,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\TreatmentController;
+use App\Http\Controllers\VisitController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -30,6 +32,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('/patient', PatientController::class)->middleware('role:Superadmin,Admin');
     Route::resource('/medicine', MedicineController::class)->middleware('role:Superadmin,Admin');
     Route::resource('/treatment', TreatmentController::class)->middleware('role:Superadmin,Admin');
+    Route::resource('/visit', VisitController::class);
+    Route::post('/visit/{visit}/status', [VisitController::class, 'status'])->name('visit.status');
 
     Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
     Route::put('/setting/{setting}/update', [SettingController::class, 'update'])->name('setting.update');
